@@ -16,6 +16,7 @@ const brands = [
   { name: 'Google Pixel', color: '#4285F4' },
   { name: 'Motorola', color: '#0070B5' },
   { name: 'Nothing', color: '#000000' },
+  { name: 'Ai+', color: '#8B5CF6' },
   { name: 'Lava', color: '#E31837' },
   { name: 'Nokia', color: '#124191' },
   { name: 'Poco', color: '#F7C600' },
@@ -67,7 +68,7 @@ export default function Brands() {
                 className="w-16 h-16 rounded-2xl flex items-center justify-center text-2xl font-black group-hover:scale-110 transition-transform"
                 style={{ backgroundColor: `${brand.color}08`, color: brand.color }}
               >
-                {brand.name.charAt(0)}
+                {brand.name === 'Ai+' ? 'Ai+' : brand.name.charAt(0)}
               </div>
               <span className="text-sm font-bold text-[#0F172A]">{brand.name}</span>
             </motion.div>

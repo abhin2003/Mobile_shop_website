@@ -7,9 +7,10 @@ const navLinks = [
   { name: 'Home', href: '#home' },
   { name: 'About', href: '#about' },
   { name: 'Brands', href: '#brands' },
+  { name: 'EMI Offers', href: '#emi-offers' },
+  { name: 'Store Deals', href: '#offers' },
   { name: 'Gallery', href: '#gallery' },
   { name: 'Services', href: '#services' },
-  { name: 'Reviews', href: '#testimonials' },
   { name: 'Contact', href: '#contact' },
 ];
 
@@ -37,8 +38,8 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
           <a href="#home" className="flex items-center gap-2 group">
-            <div className="relative w-10 h-10 rounded-xl bg-gradient-to-br from-[#E31837] to-[#1A3A8F] flex items-center justify-center shadow-md">
-              <span className="text-white font-bold text-lg">S</span>
+            <div className="relative w-10 h-10 rounded-xl bg-white overflow-hidden flex items-center justify-center shadow-sm border border-slate-100 p-0.5 group-hover:scale-105 transition-transform">
+              <img src="/logo.png" alt="Shree Sadguru Logo" className="w-full h-full object-contain" />
             </div>
             <div className="flex flex-col">
               <span className="text-sm md:text-base font-extrabold text-[#0F172A] leading-tight">Shree Sadguru</span>

@@ -96,4 +96,23 @@ export const products: Product[] = [
     image: 'https://images.unsplash.com/photo-1616348436168-de43ad0db179?q=80&w=400',
     specs: ['MediaTek Dimensity 8200', '50MP Telephoto', '80W SUPERVOOC', 'Curved Display'],
   },
+  // Ai+
+  {
+    id: 'aiplus-1',
+    brand: 'Ai+',
+    name: 'Ai+ Horizon 5G',
+    price: '₹45,999',
+    rating: 4.8,
+    image: 'https://images.unsplash.com/photo-1598327105666-5b89351aff97?q=80&w=400',
+    specs: ['AI Core Octa-Processor', '108MP Quad Camera', '6.8" 144Hz AMOLED', '6000mAh Battery'],
+  },
+  {
+    id: 'aiplus-2',
+    brand: 'Ai+',
+    name: 'Ai+ Neo Lite',
+    price: '₹24,999',
+    rating: 4.6,
+    image: 'https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?q=80&w=400',
+    specs: ['AI-boosted Chipset', '64MP Main Camera', '6.5" 120Hz IPS Display', '33W Fast Charging'],
+  },
 ];

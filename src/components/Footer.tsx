@@ -10,8 +10,8 @@ export default function Footer() {
           {/* Brand */}
           <div className="lg:col-span-2">
             <div className="flex items-center gap-3 mb-6">
-              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#E31837] to-[#1A3A8F] flex items-center justify-center shadow-sm">
-                <span className="text-white font-bold text-lg">S</span>
+              <div className="w-10 h-10 rounded-xl bg-white overflow-hidden flex items-center justify-center shadow-sm border border-slate-100 p-0.5">
+                <img src="/logo.png" alt="Shree Sadguru Logo" className="w-full h-full object-contain" />
               </div>
               <div className="flex flex-col">
                 <span className="text-base font-extrabold text-[#0F172A] leading-tight">Shree Sadguru Mobiles</span>

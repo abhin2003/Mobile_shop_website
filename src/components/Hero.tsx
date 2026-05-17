@@ -20,6 +20,16 @@ export default function Hero() {
       </div>
 
       <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 text-center pt-20">
+        {/* Company Logo in Hero */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.5 }}
+          className="w-24 h-24 mx-auto rounded-3xl bg-white shadow-xl border border-slate-100 p-2 flex items-center justify-center mb-6 hover:rotate-3 transition-transform"
+        >
+          <img src="/logo.png" alt="Shree Sadguru Mobiles Logo" className="w-full h-full object-contain" />
+        </motion.div>
+
         {/* Badge */}
         <motion.div
           initial={{ opacity: 0, y: 10 }}
