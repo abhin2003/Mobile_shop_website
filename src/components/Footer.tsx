@@ -49,7 +49,12 @@ export default function Footer() {
           <div>
             <h4 className="text-sm font-black text-[#0F172A] uppercase tracking-widest mb-6">Contact</h4>
             <ul className="space-y-4 text-sm text-[#64748B]">
-              <li>Shreesadguru121@gmail.com</li>
+              <li>
+                <a href="tel:9881633398" className="hover:text-[#E31837] transition-colors">+91 98816 33398</a>
+              </li>
+              <li>
+                <a href="mailto:Shreesadguru121@gmail.com" className="hover:text-[#E31837] transition-colors">Shreesadguru121@gmail.com</a>
+              </li>
               <li>Mon-Sat: 10AM - 9PM</li>
               <li>Sun: 11AM - 6PM</li>
             </ul>

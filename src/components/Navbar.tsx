@@ -62,10 +62,13 @@ export default function Navbar() {
 
           {/* CTA */}
           <a
-            href="#contact"
+            href="tel:9881633398"
             className="hidden lg:flex items-center gap-2 px-6 py-2.5 rounded-full bg-[#E31837] text-white text-sm font-bold hover:bg-[#B71430] transition-all duration-200 shadow-md hover:shadow-lg"
           >
-            Contact Us
+            <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-2.896-1.596-5.273-3.973-6.869-6.87l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" />
+            </svg>
+            98816 33398
           </a>
 
           {/* Mobile Menu Toggle */}
@@ -103,11 +106,14 @@ export default function Navbar() {
                 </a>
               ))}
               <a
-                href="#contact"
+                href="tel:9881633398"
                 onClick={() => setMobileOpen(false)}
-                className="block mt-4 text-center px-6 py-4 rounded-xl bg-[#E31837] text-white font-bold"
+                className="mt-4 flex items-center justify-center gap-2 px-6 py-4 rounded-xl bg-[#E31837] text-white font-bold"
               >
-                Contact Us
+                <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-2.896-1.596-5.273-3.973-6.869-6.87l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" />
+                </svg>
+                Call 98816 33398
               </a>
             </div>
           </motion.div>

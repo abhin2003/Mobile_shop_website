@@ -75,10 +75,13 @@ export default function Hero() {
             Explore Mobiles
           </a>
           <a
-            href="#contact"
-            className="px-8 py-4 rounded-full bg-white border border-gray-200 text-[#0F172A] font-bold text-base hover:bg-gray-50 hover:border-gray-300 transition-all w-full sm:w-auto"
+            href="tel:9881633398"
+            className="px-8 py-4 rounded-full bg-white border border-gray-200 text-[#0F172A] font-bold text-base hover:bg-gray-50 hover:border-gray-300 transition-all w-full sm:w-auto flex items-center justify-center gap-2"
           >
-            Contact Us
+            <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-2.896-1.596-5.273-3.973-6.869-6.87l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" />
+            </svg>
+            Call 98816 33398
           </a>
         </motion.div>
 
@@ -92,7 +95,7 @@ export default function Hero() {
           {[
             { number: '13+', label: 'Years of Trust' },
             { number: '13+', label: 'Top Brands' },
-            { number: '10K+', label: 'Happy Customers' },
+            { number: '100K+', label: 'Happy Customers' },
             { number: '100%', label: 'Genuine Products' },
           ].map((stat) => (
             <div key={stat.label} className="p-4 rounded-2xl bg-gray-50/50 border border-gray-100">
