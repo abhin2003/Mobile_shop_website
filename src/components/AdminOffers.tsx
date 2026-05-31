@@ -76,7 +76,7 @@ export default function AdminOffers() {
   // Admin access
   const handlePasswordSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (passwordInput === 'admin' || passwordInput === '1234') {
+    if (passwordInput === 'SreeSadguruMobile2012') {
       setIsAdminMode(true);
       localStorage.setItem('sadguru_admin_active', 'true');
       window.dispatchEvent(new Event('sadguru-admin-login-changed'));
@@ -406,7 +406,7 @@ export default function AdminOffers() {
                 <span className="text-2xl block mb-2">🔒</span>
                 <h3 className="text-lg font-black text-[#0F172A]">Admin Authentication</h3>
                 <p className="text-xs text-[#64748B] mt-1">
-                  Enter password to access CRUD offer panel.
+                  Enter password to access Admin panel.
                 </p>
               </div>
 

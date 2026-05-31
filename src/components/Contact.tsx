@@ -79,17 +79,22 @@ export default function Contact() {
           </motion.div>
 
           {/* Map */}
-          <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="relative rounded-2xl overflow-hidden border border-gray-100 shadow-sm bg-white min-h-[400px]">
-            <div className="absolute inset-0 bg-gray-50 flex flex-col items-center justify-center p-8 text-center">
-              <div className="w-16 h-16 rounded-2xl bg-white shadow-sm flex items-center justify-center mb-4 text-gray-300">
-                <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
-                </svg>
-              </div>
-              <h4 className="text-base font-bold text-[#0F172A] mb-2">Location Map</h4>
-              <p className="text-sm text-[#64748B]">Google Maps integration will appear here for Shree Sadguru Mobiles showroom.</p>
-            </div>
+          <motion.div 
+            initial={{ opacity: 0, x: 30 }} 
+            whileInView={{ opacity: 1, x: 0 }} 
+            viewport={{ once: true }} 
+            className="relative rounded-2xl overflow-hidden border border-gray-100 shadow-sm bg-white min-h-[400px] h-full"
+          >
+            <iframe
+              title="Shree Sadguru Mobiles Location"
+              src="https://maps.google.com/maps?q=SHOP%20NO%201%2C%20SHREE%20SADGURU%20MOBILE%20SHOPEE%2C%20Pathardi%20Rd%2C%20opp.%20R.K.LAWNS%2C%20Dnyaneshwar%20Nagar%2C%20Pathardi%20Phata%2C%20Nashik%2C%20Maharashtra%20422010&t=&z=16&ie=UTF8&iwloc=&output=embed"
+              width="100%"
+              height="100%"
+              className="absolute inset-0 border-0"
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            />
           </motion.div>
         </div>
       </div>
