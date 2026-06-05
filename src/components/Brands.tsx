@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Dialog } from '@headlessui/react';
 import { products, Product } from '@/data/products';
@@ -35,6 +35,7 @@ export default function Brands() {
   const [formPrice, setFormPrice] = useState('');
   const [formRating, setFormRating] = useState(4.5);
   const [formImage, setFormImage] = useState('');
+  const fileInputRef = useRef<HTMLInputElement>(null);
   const [formSpec1, setFormSpec1] = useState('');
   const [formSpec2, setFormSpec2] = useState('');
   const [formSpec3, setFormSpec3] = useState('');
@@ -81,6 +82,7 @@ export default function Brands() {
     setFormPrice('');
     setFormRating(4.5);
     setFormImage('');
+    if (fileInputRef.current) fileInputRef.current.value = '';
     setFormSpec1('');
     setFormSpec2('');
     setFormSpec3('');
@@ -334,14 +336,51 @@ export default function Brands() {
 
                           <div>
                             <label className="block text-xs font-bold text-[#0F172A] uppercase tracking-wider mb-1.5">
-                              Image URL (Optional)
+                              Product Image (Optional)
                             </label>
+                            <div
+                              onClick={() => fileInputRef.current?.click()}
+                              className="relative w-full h-[52px] rounded-xl bg-white border-2 border-dashed border-slate-200 hover:border-[#1A3A8F] transition-all cursor-pointer flex items-center gap-3 px-3 group overflow-hidden"
+                            >
+                              {formImage ? (
+                                <>
+                                  <img
+                                    src={formImage}
+                                    alt="preview"
+                                    className="w-9 h-9 rounded-lg object-cover shrink-0 border border-slate-100 shadow-sm"
+                                  />
+                                  <span className="text-xs font-semibold text-slate-600 truncate flex-1">Image selected ✓</span>
+                                  <button
+                                    type="button"
+                                    onClick={(e) => { e.stopPropagation(); setFormImage(''); if (fileInputRef.current) fileInputRef.current.value = ''; }}
+                                    className="shrink-0 w-6 h-6 rounded-full bg-red-50 hover:bg-red-100 text-red-500 flex items-center justify-center text-xs font-bold transition-all"
+                                  >
+                                    ✕
+                                  </button>
+                                </>
+                              ) : (
+                                <>
+                                  <div className="w-9 h-9 rounded-lg bg-slate-50 group-hover:bg-blue-50 flex items-center justify-center shrink-0 transition-colors">
+                                    <svg className="w-4 h-4 text-slate-400 group-hover:text-[#1A3A8F] transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                                      <path strokeLinecap="round" strokeLinejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5m-13.5-9L12 3m0 0l4.5 4.5M12 3v13.5" />
+                                    </svg>
+                                  </div>
+                                  <span className="text-xs text-slate-400 group-hover:text-[#1A3A8F] font-medium transition-colors">Click to upload image</span>
+                                </>
+                              )}
+                            </div>
                             <input
-                              type="text"
-                              value={formImage}
-                              onChange={(e) => setFormImage(e.target.value)}
-                              placeholder="Leave blank for default"
-                              className="w-full px-4 py-3 rounded-xl bg-white border border-slate-200 text-sm focus:border-[#1A3A8F] focus:outline-none transition-all text-slate-800 font-medium"
+                              ref={fileInputRef}
+                              type="file"
+                              accept="image/*"
+                              className="hidden"
+                              onChange={(e) => {
+                                const file = e.target.files?.[0];
+                                if (!file) return;
+                                const reader = new FileReader();
+                                reader.onload = (ev) => setFormImage(ev.target?.result as string);
+                                reader.readAsDataURL(file);
+                              }}
                             />
                           </div>
                         </div>
