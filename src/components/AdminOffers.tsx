@@ -52,25 +52,39 @@ export default function AdminOffers() {
 
   // Load from localStorage on mount
   useEffect(() => {
-    const active = localStorage.getItem('sadguru_admin_active') === 'true';
-    setIsAdminMode(active);
+    try {
+      const active = localStorage.getItem('sadguru_admin_active') === 'true';
+      setIsAdminMode(active);
 
-    const stored = localStorage.getItem('sadguru_offers');
-    if (stored) {
-      try {
-        setOffers(JSON.parse(stored));
-      } catch (e) {
+      const stored = localStorage.getItem('sadguru_offers');
+      if (stored) {
+        try {
+          setOffers(JSON.parse(stored));
+        } catch (e) {
+          setOffers(DEFAULT_OFFERS);
+        }
+      } else {
         setOffers(DEFAULT_OFFERS);
+        try {
+          localStorage.setItem('sadguru_offers', JSON.stringify(DEFAULT_OFFERS));
+        } catch (err) {
+          console.error('Failed to save default offers', err);
+        }
       }
-    } else {
+    } catch (err) {
+      console.error('localStorage is not available', err);
       setOffers(DEFAULT_OFFERS);
-      localStorage.setItem('sadguru_offers', JSON.stringify(DEFAULT_OFFERS));
     }
   }, []);
 
   const saveOffersToStorage = (updated: Offer[]) => {
     setOffers(updated);
-    localStorage.setItem('sadguru_offers', JSON.stringify(updated));
+    try {
+      localStorage.setItem('sadguru_offers', JSON.stringify(updated));
+    } catch (e) {
+      console.error('Failed to save offers to localStorage', e);
+      alert('Browser storage is full. Unable to persist offers.');
+    }
   };
 
   // Admin access
@@ -78,7 +92,11 @@ export default function AdminOffers() {
     e.preventDefault();
     if (passwordInput === 'SreeSadguruMobile2012') {
       setIsAdminMode(true);
-      localStorage.setItem('sadguru_admin_active', 'true');
+      try {
+        localStorage.setItem('sadguru_admin_active', 'true');
+      } catch (err) {
+        console.error('Failed to save login status', err);
+      }
       window.dispatchEvent(new Event('sadguru-admin-login-changed'));
       setShowPasswordModal(false);
       setPasswordInput('');
@@ -90,7 +108,11 @@ export default function AdminOffers() {
 
   const handleLogout = () => {
     setIsAdminMode(false);
-    localStorage.setItem('sadguru_admin_active', 'false');
+    try {
+      localStorage.setItem('sadguru_admin_active', 'false');
+    } catch (err) {
+      console.error('Failed to save logout status', err);
+    }
     window.dispatchEvent(new Event('sadguru-admin-login-changed'));
     resetForm();
   };
